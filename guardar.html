@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardar Producto</title>
+</head>
+<body>
+    <h1>Guardar Producto</h1>
+
+    <!-- Formulario para ingresar información del producto -->
+    <form id="product-form">
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" required>
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+        <br>
+        <button type="button" id="guardar">Guardar Producto</button>
+        <button type="button" id="cancelar">Cancelar</button>
+    </form>
+
+    <!-- Mensaje de éxito al guardar el producto -->
+    <div id="success-message" style="display: none;">
+        <p>¡Producto guardado con éxito!</p>
+        <button type="button" id="volver">Volver al inicio</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productForm = document.getElementById('product-form');
+            const guardarButton = document.getElementById('guardar');
+            const cancelarButton = document.getElementById('cancelar');
+            const successMessage = document.getElementById('success-message');
+            const volverButton = document.getElementById('volver');
+
+            guardarButton.addEventListener('click', () => {
+                // Obtener los valores ingresados por el usuario
+                const nombre = document.getElementById('nombre').value;
+                const precio = document.getElementById('precio').value;
+                const descripcion = document.getElementById('descripcion').value;
+
+                // Aquí puedes agregar código para guardar los datos del producto
+                // Por ejemplo, muestra un mensaje de éxito y oculta el formulario
+
+                // Mostrar el mensaje de éxito y ocultar el formulario
+                productForm.style.display = 'none';
+                successMessage.style.display = 'block';
+            });
+
+            volverButton.addEventListener('click', () => {
+                // Redireccionar al usuario de vuelta al inicio (index.html)
+                window.location.href = 'index.html';
+            });
+
+            cancelarButton.addEventListener('click', () => {
+                // Redireccionar al usuario de vuelta al inicio (index.html)
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
