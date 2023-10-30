@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+
+    <h1>productos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descriptión</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <button>Nuevo producto</button>
+
+    <script>
+        async function getproducts() {
+            const response = await fetch("https://siaweb-nodejs.carlos-reneren7.repl.co/productos", {mode: 'no-cors'});
+
+            console.log(response);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", async (event) => {
+           await getproducts();
+        });
+
+        
+    </script>
+</body>
+</html>
